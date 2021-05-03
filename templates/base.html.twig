@@ -7,8 +7,10 @@
         <title>{% block title %}Sortir.com LDJ | {% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
+        <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
+
         {% endblock %}
 
         {% block javascripts %}
@@ -16,6 +18,22 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+            <header>
+                <div style="float:left; width:400; height: 200; border:2px solid black; content:'LOGO';"></div>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="#">Lien 1</a></li>
+                        <li><a href="#">Lien 2</a></li>
+                        <li><a href="#">Lien 3</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+
+            </div>
+            {% block body %}{% endblock %}
+        </div>
+
     </body>
 </html>
