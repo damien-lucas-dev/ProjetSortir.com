@@ -18,12 +18,10 @@
         {% endblock %}
     </head>
     <body>
-    {% include('inc/nav.html.twig') %}
+    <header>
+        {% include('inc/nav.html.twig') %}
+    </header>
 
-
-            </div>
             {% block body %}{% endblock %}
-        </div>
-
     </body>
 </html>
