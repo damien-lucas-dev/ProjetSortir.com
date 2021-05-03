@@ -18,18 +18,8 @@
         {% endblock %}
     </head>
     <body>
-        <div class="container">
-            <header>
-                <div style="float:left; width:400px; height: 200px; border:2px solid black; content:'LOGO';"></div>
-                <nav class="nav">
-                    <ul>
-                        <li><a href="#">Lien 1</a></li>
-                        <li><a href="#">Lien 2</a></li>
-                        <li><a href="#">Lien 3</a></li>
-                    </ul>
-                </nav>
-            </header>
-            <div class="container">
+    {% include('inc/nav.html.twig') %}
+
 
             </div>
             {% block body %}{% endblock %}
