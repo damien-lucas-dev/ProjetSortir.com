@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Entity\Participant;
+use App\Entity\Utilisateur;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
@@ -10,16 +10,16 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @method Participant|null find($id, $lockMode = null, $lockVersion = null)
- * @method Participant|null findOneBy(array $criteria, array $orderBy = null)
- * @method Participant[]    findAll()
- * @method Participant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Utilisateur|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Utilisateur|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Utilisateur[]    findAll()
+ * @method Utilisateur[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ParticipantRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
+class UtilisateurRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Participant::class);
+        parent::__construct($registry, Utilisateur::class);
     }
 
     /**
@@ -27,7 +27,7 @@ class ParticipantRepository extends ServiceEntityRepository implements PasswordU
      */
     public function upgradePassword(UserInterface $user, string $newEncodedPassword): void
     {
-        if (!$user instanceof Participant) {
+        if (!$user instanceof Utilisateur) {
             throw new UnsupportedUserException(sprintf('Instances of "%s" are not supported.', \get_class($user)));
         }
 
@@ -37,7 +37,7 @@ class ParticipantRepository extends ServiceEntityRepository implements PasswordU
     }
 
     // /**
-    //  * @return Participant[] Returns an array of Participant objects
+    //  * @return Utilisateur[] Returns an array of Utilisateur objects
     //  */
     /*
     public function findByExampleField($value)
@@ -54,7 +54,7 @@ class ParticipantRepository extends ServiceEntityRepository implements PasswordU
     */
 
     /*
-    public function findOneBySomeField($value): ?Participant
+    public function findOneBySomeField($value): ?Utilisateur
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')

@@ -2,16 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ParticipantRepository;
+use App\Repository\UtilisateurRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass=ParticipantRepository::class)
+ * @ORM\Entity(repositoryClass=UtilisateurRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class Participant implements UserInterface
+class Utilisateur implements UserInterface
 {
     /**
      * @ORM\Id

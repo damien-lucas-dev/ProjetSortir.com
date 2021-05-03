@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Participant;
+use App\Entity\Utilisateur;
 use App\Form\RegistrationFormType;
 use App\Security\AppAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +19,11 @@ class RegistrationController extends AbstractController
      */
     public function register(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, AppAuthenticator $authenticator): Response
     {
-        $user = new Participant();
+        $user = new Utilisateur();
+
+        $user->setAdministrateur(false);
+        $user->setActif(true);
+
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
